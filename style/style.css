@@ -73,6 +73,23 @@ h2, em {
     display: none;
 }
 
-.ocultos{
-    display: none !important;
+.checkbox-container {
+    display: flex;
+    justify-content: space-between; /* Mantiene las dos hileras alineadas una a la izquierda y otra a la derecha */
+    gap: 20px; /* Ajusta el espacio entre las dos hileras */
+}
+
+.hilera {
+    display: flex;
+    flex-direction: column; /* Alinea los checkboxes en columna dentro de cada hilera */
+    gap: 10px; /* Espacio entre los checkboxes para que no se pisen */
+}
+
+input[type="checkbox"] {
+    transform: scale(5); /* Ajusta el tamaño */
+    margin-right: 10px; /* Espacio entre el checkbox y el texto */
+}
+
+.checkbox-container input{
+    margin: 1.5rem;
 }
