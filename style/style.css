@@ -23,6 +23,8 @@ h2, em {
 #rnbo-clickable-keyboard {
     display: flex;
     flex-wrap: wrap;
+
+    display: none;
 }
 
 #rnbo-clickable-keyboard > div {
@@ -43,6 +45,7 @@ h2, em {
 #rnbo-parameter-sliders {
     display: flex;
     flex-direction: column;
+    display: none;
 }
 
 #rnbo-parameter-sliders > div {
@@ -50,6 +53,8 @@ h2, em {
 }
 
 #rnbo-parameter-sliders > div > input:first-of-type {
+
+
     flex-grow: 1;
 }
 #rnbo-parameter-checkboxes{
@@ -66,4 +71,8 @@ h2, em {
     justify-content: center;
     
     display: none;
+}
+
+.ocultos{
+    display: none !important;
 }
