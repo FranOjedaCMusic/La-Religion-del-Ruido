@@ -83,6 +83,10 @@ async function setup() {
     makeCheckboxesb(device);
     makeCheckboxesc(device);
     makeCheckboxesd(device);
+    makeCheckboxese(device);
+    makeCheckboxesf(device);
+    makeCheckboxesg(device);
+    makeCheckboxesh(device);
 
     // (Optional) Create a form to send messages to RNBO inputs
     makeInportForm(device);
@@ -425,7 +429,211 @@ function makeCheckboxesd(device) {
         // Añadir la checkbox al contenedor
         cdiv.appendChild(checkboxContainer);
     }
+}  
+function makeCheckboxese(device) {
+    let cdiv = document.getElementById("rnbo-parameter-checkboxes-e");
+    let noParamLabel = document.getElementById("no-checkboxes-label");
+    if (noParamLabel && device.numParameters > 0) cdiv.removeChild(noParamLabel);
+
+    let currentSample = null;
+
+    // Asumiendo que tienes los parámetros "playsmpa" y "stopsmpa"
+    let playsmpa = device.parameters.find(param => param.name === "playsmpe");
+    let stopsmpa = device.parameters.find(param => param.name === "stopsmpe");
+
+    // Crear 8 checkboxes
+    for (let i = 0; i < 8; i++) {
+        // Crear un label y una checkbox
+        let label = document.createElement("label");
+        let checkbox = document.createElement("input");
+        let checkboxContainer = document.createElement("div");
+        checkboxContainer.appendChild(label);
+        checkboxContainer.appendChild(checkbox);
+
+        // Configurar el label
+        label.setAttribute("for", `checkbox${i}`);
+        label.textContent = ``;
+
+        // Configurar la checkbox
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("id", `checkbox${i}`);
+        checkbox.setAttribute("name", `checkbox${i}`);
+
+        // Acción al hacer clic en una checkbox
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                // Desactivar el sample actual (si hay uno activo)
+                if (currentSample) currentSample.checked = false;
+                stopsmpa.value = 0;
+                // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
+                playsmpa.value = 9.0
+                playsmpa.value = i;  // El valor corresponde al índice de la checkbox
+                currentSample = checkbox;
+
+            } else {
+                // Si se desmarca, enviar el valor 1 al "stopsmpa"
+                stopsmpa.value = 1;
+                currentSample = null;
+            }
+        });
+
+        // Añadir la checkbox al contenedor
+        cdiv.appendChild(checkboxContainer);
+    }
 }   
+function makeCheckboxesf(device) {
+    let cdiv = document.getElementById("rnbo-parameter-checkboxes-f");
+    let noParamLabel = document.getElementById("no-checkboxes-label");
+    if (noParamLabel && device.numParameters > 0) cdiv.removeChild(noParamLabel);
+
+    let currentSample = null;
+
+    // Asumiendo que tienes los parámetros "playsmpa" y "stopsmpa"
+    let playsmpa = device.parameters.find(param => param.name === "playsmpf");
+    let stopsmpa = device.parameters.find(param => param.name === "stopsmpf");
+
+    // Crear 8 checkboxes
+    for (let i = 0; i < 8; i++) {
+        // Crear un label y una checkbox
+        let label = document.createElement("label");
+        let checkbox = document.createElement("input");
+        let checkboxContainer = document.createElement("div");
+        checkboxContainer.appendChild(label);
+        checkboxContainer.appendChild(checkbox);
+
+        // Configurar el label
+        label.setAttribute("for", `checkbox${i}`);
+        label.textContent = ``;
+
+        // Configurar la checkbox
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("id", `checkbox${i}`);
+        checkbox.setAttribute("name", `checkbox${i}`);
+
+        // Acción al hacer clic en una checkbox
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                // Desactivar el sample actual (si hay uno activo)
+                if (currentSample) currentSample.checked = false;
+                stopsmpa.value = 0;
+                // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
+                playsmpa.value = 9.0
+                playsmpa.value = i;  // El valor corresponde al índice de la checkbox
+                currentSample = checkbox;
+
+            } else {
+                // Si se desmarca, enviar el valor 1 al "stopsmpa"
+                stopsmpa.value = 1;
+                currentSample = null;
+            }
+        });
+
+        // Añadir la checkbox al contenedor
+        cdiv.appendChild(checkboxContainer);
+    }
+}   
+function makeCheckboxesg(device) {
+    let cdiv = document.getElementById("rnbo-parameter-checkboxes-g");
+    let noParamLabel = document.getElementById("no-checkboxes-label");
+    if (noParamLabel && device.numParameters > 0) cdiv.removeChild(noParamLabel);
+
+    let currentSample = null;
+
+    // Asumiendo que tienes los parámetros "playsmpa" y "stopsmpa"
+    let playsmpa = device.parameters.find(param => param.name === "playsmpg");
+    let stopsmpa = device.parameters.find(param => param.name === "stopsmpg");
+
+    // Crear 8 checkboxes
+    for (let i = 0; i < 8; i++) {
+        // Crear un label y una checkbox
+        let label = document.createElement("label");
+        let checkbox = document.createElement("input");
+        let checkboxContainer = document.createElement("div");
+        checkboxContainer.appendChild(label);
+        checkboxContainer.appendChild(checkbox);
+
+        // Configurar el label
+        label.setAttribute("for", `checkbox${i}`);
+        label.textContent = ``;
+
+        // Configurar la checkbox
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("id", `checkbox${i}`);
+        checkbox.setAttribute("name", `checkbox${i}`);
+
+        // Acción al hacer clic en una checkbox
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                // Desactivar el sample actual (si hay uno activo)
+                if (currentSample) currentSample.checked = false;
+                stopsmpa.value = 0;
+                // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
+                playsmpa.value = 9.0
+                playsmpa.value = i;  // El valor corresponde al índice de la checkbox
+                currentSample = checkbox;
+
+            } else {
+                // Si se desmarca, enviar el valor 1 al "stopsmpa"
+                stopsmpa.value = 1;
+                currentSample = null;
+            }
+        });
+
+        // Añadir la checkbox al contenedor
+        cdiv.appendChild(checkboxContainer);
+    }
+}   
+function makeCheckboxesh(device) {
+    let cdiv = document.getElementById("rnbo-parameter-checkboxes-h");
+    let noParamLabel = document.getElementById("no-checkboxes-label");
+    if (noParamLabel && device.numParameters > 0) cdiv.removeChild(noParamLabel);
+
+    let currentSample = null;
+
+    // Asumiendo que tienes los parámetros "playsmpa" y "stopsmpa"
+    let playsmpa = device.parameters.find(param => param.name === "playsmph");
+    let stopsmpa = device.parameters.find(param => param.name === "stopsmph");
+
+    // Crear 8 checkboxes
+    for (let i = 0; i < 8; i++) {
+        // Crear un label y una checkbox
+        let label = document.createElement("label");
+        let checkbox = document.createElement("input");
+        let checkboxContainer = document.createElement("div");
+        checkboxContainer.appendChild(label);
+        checkboxContainer.appendChild(checkbox);
+
+        // Configurar el label
+        label.setAttribute("for", `checkbox${i}`);
+        label.textContent = ``;
+
+        // Configurar la checkbox
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("id", `checkbox${i}`);
+        checkbox.setAttribute("name", `checkbox${i}`);
+
+        // Acción al hacer clic en una checkbox
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                // Desactivar el sample actual (si hay uno activo)
+                if (currentSample) currentSample.checked = false;
+                stopsmpa.value = 0;
+                // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
+                playsmpa.value = 9.0
+                playsmpa.value = i;  // El valor corresponde al índice de la checkbox
+                currentSample = checkbox;
+
+            } else {
+                // Si se desmarca, enviar el valor 1 al "stopsmpa"
+                stopsmpa.value = 1;
+                currentSample = null;
+            }
+        });
+
+        // Añadir la checkbox al contenedor
+        cdiv.appendChild(checkboxContainer);
+    }
+}    
 function makeInportForm(device) {
     const idiv = document.getElementById("rnbo-inports");
     const inportSelect = document.getElementById("inport-select");

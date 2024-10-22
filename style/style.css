@@ -30,8 +30,7 @@ h1{
 }
 
 #rnbo-root {
-    height: 100vh;
-    width: 100vw;
+
 }
 #background {
     position: absolute;
@@ -45,7 +44,6 @@ h2, em {
 
 #rnbo-root {
     margin: auto;
-    max-width: 540px;
 }
 #rnbo-inports {
     display: none;
