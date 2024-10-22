@@ -19,7 +19,16 @@ h2, em {
     margin: auto;
     max-width: 540px;
 }
+#rnbo-inports {
+    display: none;
+}
+#rnbo-console {
+    display: none;
+}
 
+#rnbo-presets {
+    display: none;
+}
 #rnbo-clickable-keyboard {
     display: flex;
     flex-wrap: wrap;
