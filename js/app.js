@@ -261,7 +261,7 @@ function makeCheckboxes(device) {
                 if (currentSample) currentSample.checked = false;
                 stopsmpa.value = 0;
                 // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
-                playsmpa.value = 9.0
+                playsmpa.value = 10.0
                 playsmpa.value = i;  // El valor corresponde al índice de la checkbox
                 currentSample = checkbox;
 
@@ -313,7 +313,7 @@ function makeCheckboxesb(device) {
                 if (currentSample) currentSample.checked = false;
                 stopsmpa.value = 0;
                 // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
-                playsmpa.value = 9.0
+                playsmpa.value = 10.0
                 playsmpa.value = i;  // El valor corresponde al índice de la checkbox
                 currentSample = checkbox;
 
@@ -364,7 +364,7 @@ function makeCheckboxesc(device) {
                 if (currentSample) currentSample.checked = false;
                 stopsmpa.value = 0;
                 // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
-                playsmpa.value = 9.0
+                playsmpa.value = 10.0
                 playsmpa.value = i;  // El valor corresponde al índice de la checkbox
                 currentSample = checkbox;
 
@@ -415,7 +415,7 @@ function makeCheckboxesd(device) {
                 if (currentSample) currentSample.checked = false;
                 stopsmpa.value = 0;
                 // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
-                playsmpa.value = 9.0
+                playsmpa.value = 10.0
                 playsmpa.value = i;  // El valor corresponde al índice de la checkbox
                 currentSample = checkbox;
 
@@ -466,7 +466,7 @@ function makeCheckboxese(device) {
                 if (currentSample) currentSample.checked = false;
                 stopsmpa.value = 0;
                 // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
-                playsmpa.value = 9.0
+                playsmpa.value = 10.0
                 playsmpa.value = i;  // El valor corresponde al índice de la checkbox
                 currentSample = checkbox;
 
@@ -517,7 +517,7 @@ function makeCheckboxesf(device) {
                 if (currentSample) currentSample.checked = false;
                 stopsmpa.value = 0;
                 // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
-                playsmpa.value = 9.0
+                playsmpa.value = 10.0
                 playsmpa.value = i;  // El valor corresponde al índice de la checkbox
                 currentSample = checkbox;
 
@@ -568,7 +568,7 @@ function makeCheckboxesg(device) {
                 if (currentSample) currentSample.checked = false;
                 stopsmpa.value = 0;
                 // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
-                playsmpa.value = 9.0
+                playsmpa.value = 10.0
                 playsmpa.value = i;  // El valor corresponde al índice de la checkbox
                 currentSample = checkbox;
 
@@ -618,8 +618,9 @@ function makeCheckboxesh(device) {
                 // Desactivar el sample actual (si hay uno activo)
                 if (currentSample) currentSample.checked = false;
                 stopsmpa.value = 0;
+
                 // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
-                playsmpa.value = 9.0
+                playsmpa.value = 10.0
                 playsmpa.value = i;  // El valor corresponde al índice de la checkbox
                 currentSample = checkbox;
 
