@@ -1,8 +1,34 @@
+:root{
+    --size-button:min(8vw,10vh);
+    --border-rad:15px;
+}
+
+
+
 html, body {
     margin: 0;
     padding: 0;
     text-align: center;
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(186, 89, 82);
+    color: antiquewhite;
+    margin: 0;
+
+}
+h1{
+    color: #0000009d;
+    text-transform: uppercase;
+    font-family: monospace;
+    font-weight: 600;
+    font-size: min(2.5rem,7vw);
+}
+
 #rnbo-root {
     height: 100vh;
     width: 100vw;
@@ -14,6 +40,7 @@ html, body {
 
 h2, em {
     width: 100%;
+
 }
 
 #rnbo-root {
@@ -90,17 +117,68 @@ h2, em {
     gap: 20px; /* Ajusta el espacio entre las dos hileras */
 }
 
-.hilera {
+
+.containerButtons{
+
+    background-color: rgb(36, 36, 36);
     display: flex;
-    flex-direction: column; /* Alinea los checkboxes en columna dentro de cada hilera */
-    gap: 10px; /* Espacio entre los checkboxes para que no se pisen */
+    flex-direction: row;
+    /* border:double wheat 2px ; */
+    padding: min(2vw,2vh);
+    box-shadow: 10px 15px 25px 10px  #00000083;
+
+    border-radius: var(--border-rad);
+    
+}
+.checkbox-buttons{
+    display: flex;
+    flex-direction: column;
+   
+}
+.checkbox-buttons h2{
+    display: none;
+}
+input{
+    position: relative;
+    height: 0;
+    width: 0;
+    margin: calc(var(--size-button)/2 + 5px);
+
+
 }
 
-input[type="checkbox"] {
-    transform: scale(5); /* Ajusta el tamaño */
-    margin-right: 10px; /* Espacio entre el checkbox y el texto */
+input::before{
+    position:absolute;
+    content: "";
+    width: var(--size-button);
+    height: var(--size-button);
+    background-color: crimson;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor:pointer;
+    border-radius: var(--border-rad);
+    box-shadow: 3px 4px 3px 0px  #00000051;
+    transition: .2s;
 }
 
-.checkbox-container input{
-    margin: 2rem;
+input:checked::before{
+    background-color: #9b95ed;
 }
+
+input:hover::after{
+    position:absolute;
+    content: "";
+    width: var(--size-button);
+    height: var(--size-button);
+    background-color: rgba(255, 196, 133, 0.212);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor:pointer;
+    border-radius: var(--border-rad);
+}
+
+
+
+
