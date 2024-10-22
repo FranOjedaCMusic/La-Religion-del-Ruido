@@ -1,6 +1,7 @@
 html, body {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 #rnbo-root {
     height: 100vh;
@@ -28,6 +29,7 @@ h2, em {
 
 #rnbo-presets {
     display: none;
+
 }
 #rnbo-clickable-keyboard {
     display: flex;
@@ -100,5 +102,5 @@ input[type="checkbox"] {
 }
 
 .checkbox-container input{
-    margin: 1.5rem;
+    margin: 2rem;
 }

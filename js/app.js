@@ -243,7 +243,7 @@ function makeCheckboxes(device) {
 
         // Configurar el label
         label.setAttribute("for", `checkbox${i}`);
-        label.textContent = `Sample ${i}: `;
+        label.textContent = ``;
 
         // Configurar la checkbox
         checkbox.setAttribute("type", "checkbox");
@@ -295,7 +295,7 @@ function makeCheckboxesb(device) {
 
         // Configurar el label
         label.setAttribute("for", `checkbox${i}`);
-        label.textContent = `Sample ${i}: `;
+        label.textContent = ``;
 
         // Configurar la checkbox
         checkbox.setAttribute("type", "checkbox");
@@ -346,7 +346,7 @@ function makeCheckboxesc(device) {
 
         // Configurar el label
         label.setAttribute("for", `checkbox${i}`);
-        label.textContent = `Sample ${i}: `;
+        label.textContent = ``;
 
         // Configurar la checkbox
         checkbox.setAttribute("type", "checkbox");
@@ -397,7 +397,7 @@ function makeCheckboxesd(device) {
 
         // Configurar el label
         label.setAttribute("for", `checkbox${i}`);
-        label.textContent = `Sample ${i}: `;
+        label.textContent = ``;
 
         // Configurar la checkbox
         checkbox.setAttribute("type", "checkbox");
