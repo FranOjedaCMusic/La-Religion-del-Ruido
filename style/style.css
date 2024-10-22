@@ -136,7 +136,7 @@ h2, em {
 .checkbox-buttons h2{
     display: none;
 }
-input{
+/*input{
     position: relative;
     height: 0;
     width: 0;
@@ -175,7 +175,7 @@ input:hover::after{
     transform: translate(-50%, -50%);
     cursor:pointer;
     border-radius: var(--border-rad);
-}
+}*/
 
 
 
