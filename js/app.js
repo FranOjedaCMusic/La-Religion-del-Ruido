@@ -259,7 +259,7 @@ function makeCheckboxes(device, column) {
                 if (currentSample) currentSample.checked = false;
                 stopsmpa.value = 0;
                 // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
-                playsmpa.value = 10.0
+                playsmpa.value = -1.0
                 playsmpa.value = i;  // El valor corresponde al índice de la checkbox
                 currentSample = checkbox;
 
