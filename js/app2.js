@@ -72,13 +72,21 @@ async function setup() {
     device.node.connect(outputNode);
 
     // (Optional) Extract the name and rnbo version of the patcher from the description
-    document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "Unnamed Patcher") + " (v" + patcher.desc.meta.rnboversion + ")";
+    document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "Unnamed Patcher") ;
 
     // (Optional) Automatically create sliders for the device parameters
+    
     makeSliders(device);
 
     // Creación de las checkboxes para playsmpa/stopsmpa en su propio div
     makeCheckboxes(device,"a");
+    makeCheckboxes(device, "b");
+    makeCheckboxes(device, "c");
+    makeCheckboxes(device, "d");
+    makeCheckboxes(device, "e");
+    makeCheckboxes(device, "f");
+    makeCheckboxes(device, "g");
+    makeCheckboxes(device, "h");
 
     // (Optional) Create a form to send messages to RNBO inputs
     makeInportForm(device);
@@ -121,12 +129,14 @@ function makeSliders(device) {
     let pdiv = document.getElementById("rnbo-parameter-sliders");
     let noParamLabel = document.getElementById("no-param-label");
     if (noParamLabel && device.numParameters > 0) pdiv.removeChild(noParamLabel);
-
+    
+   
     // This will allow us to ignore parameter update events while dragging the slider.
     let isDraggingSlider = false;
     let uiElements = {};
 
     device.parameters.forEach(param => {
+        
         // Subpatchers also have params. If we want to expose top-level
         // params only, the best way to determine if a parameter is top level
         // or not is to exclude parameters with a '/' in them.
@@ -249,7 +259,7 @@ function makeCheckboxes(device, column) {
                 if (currentSample) currentSample.checked = false;
                 stopsmpa.value = 0;
                 // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
-                playsmpa.value = -1.0
+                playsmpa.value = -1
                 playsmpa.value = i;  // El valor corresponde al índice de la checkbox
                 currentSample = checkbox;
 
@@ -264,6 +274,7 @@ function makeCheckboxes(device, column) {
         cdiv.appendChild(checkboxContainer);
     }
 }   
+    
 function makeInportForm(device) {
     const idiv = document.getElementById("rnbo-inports");
     const inportSelect = document.getElementById("inport-select");
