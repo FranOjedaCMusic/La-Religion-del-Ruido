@@ -16,17 +16,13 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-<<<<<<< HEAD
-    background-color: rgb(0, 0, 0);
-=======
     background-color: #ba5952;
->>>>>>> b2406d6 (welcome panel)
     color: antiquewhite;
     margin: 0;
 
 }
 h1{
-    color: #ffffff9d;
+    color: #0000009d;
     text-transform: uppercase;
     font-family: monospace;
     font-weight: 600;
@@ -98,14 +94,14 @@ h2, em {
     flex-grow: 1;
 }
 #rnbo-parameter-checkboxes{
-    background-color: rgb(255, 255, 255);
+    background-color: crimson;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .SMPA1{
-    background-color: rgb(0, 0, 0);
+    background-color: crimson;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -129,7 +125,7 @@ h2, em {
     padding: min(2vw,2vh);
     box-shadow: 10px 15px 25px 10px  #00000083;
 
-    border-radius: var(--border-r   ad);
+    border-radius: var(--border-rad);
     
 }
 .checkbox-buttons{
@@ -155,11 +151,7 @@ input::before{
     content: "";
     width: var(--size-button);
     height: var(--size-button);
-<<<<<<< HEAD
-    background-color: rgb(0, 0, 0);
-=======
     background-color: #dc143c;
->>>>>>> b2406d6 (welcome panel)
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -170,7 +162,7 @@ input::before{
 }
 
 input:checked::before{
-    background-color: #ffffff;
+    background-color: #9b95ed;
 }
 
 input:hover::after{
@@ -178,17 +170,15 @@ input:hover::after{
     content: "";
     width: var(--size-button);
     height: var(--size-button);
-<<<<<<< HEAD
-    background-color: rgba(230, 230, 230, 0.212);
-=======
     background-color: #ffc48536;
->>>>>>> b2406d6 (welcome panel)
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     cursor:pointer;
     border-radius: var(--border-rad);
 }
+
+
 
 .welcomeScreen h1{
     padding-top: 30vh;

@@ -74,6 +74,7 @@ async function setup() {
     // (Optional) Extract the name and rnbo version of the patcher from the description
     document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "Cargando. Por favor espera.") ;
 
+
     // (Optional) Automatically create sliders for the device parameters
     
     makeSliders(device);
