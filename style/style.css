@@ -16,13 +16,13 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     color: antiquewhite;
     margin: 0;
 
 }
 h1{
-    color: #0000009d;
+    color: #ffffff9d;
     text-transform: uppercase;
     font-family: monospace;
     font-weight: 600;
@@ -151,7 +151,7 @@ input::before{
     content: "";
     width: var(--size-button);
     height: var(--size-button);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -162,7 +162,7 @@ input::before{
 }
 
 input:checked::before{
-    background-color: #6c6b75;
+    background-color: #ffffff;
 }
 
 input:hover::after{
@@ -170,7 +170,7 @@ input:hover::after{
     content: "";
     width: var(--size-button);
     height: var(--size-button);
-    background-color: rgba(255, 196, 133, 0.212);
+    background-color: rgba(230, 230, 230, 0.212);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
