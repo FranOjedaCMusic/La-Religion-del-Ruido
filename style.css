@@ -180,26 +180,4 @@ input:hover::after{
 
 
 
-.welcomeScreen h1{
-    padding-top: 30vh;
-    color: #dddddd;
-}
-.welcomeScreen{
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #000000;
-    z-index: 10000;
-}
-.hide{
-    display: none;
-}
-.welcomeScreen button{
-    padding: 10px 15px;
-    border-radius: 25px;
-    background-color: #a8a8a8;
 
-    color: #ffffff;
-    border: 0;
-} 
