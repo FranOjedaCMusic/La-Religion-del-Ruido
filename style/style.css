@@ -16,7 +16,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(186, 89, 82);
+    background-color: rgb(255, 255, 255);
     color: antiquewhite;
     margin: 0;
 
@@ -94,14 +94,14 @@ h2, em {
     flex-grow: 1;
 }
 #rnbo-parameter-checkboxes{
-    background-color: crimson;
+    background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .SMPA1{
-    background-color: crimson;
+    background-color: rgb(0, 0, 0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,7 +125,7 @@ h2, em {
     padding: min(2vw,2vh);
     box-shadow: 10px 15px 25px 10px  #00000083;
 
-    border-radius: var(--border-rad);
+    border-radius: var(--border-r   ad);
     
 }
 .checkbox-buttons{
@@ -151,7 +151,7 @@ input::before{
     content: "";
     width: var(--size-button);
     height: var(--size-button);
-    background-color: crimson;
+    background-color: rgb(255, 255, 255);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -162,7 +162,7 @@ input::before{
 }
 
 input:checked::before{
-    background-color: #9b95ed;
+    background-color: #6c6b75;
 }
 
 input:hover::after{
