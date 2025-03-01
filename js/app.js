@@ -403,4 +403,17 @@ function makeMIDIKeyboard(device) {
     });
 }
 
+
+
+/* Hide welcome screen */
+function hideWelcome() {
+    var div = document.getElementById("WelcomeScreen");
+    div.classList.add("hide");
+}
+
+
+
 setup();
+
+
+
