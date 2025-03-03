@@ -81,7 +81,7 @@ h2, em {
 #rnbo-parameter-sliders {
     display: flex;
     flex-direction: column;
-    display: none;
+/*     display: none; */
 }
 
 #rnbo-parameter-sliders > div {
