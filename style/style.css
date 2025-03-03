@@ -136,7 +136,7 @@ h2, em {
 .checkbox-buttons h2{
     display: none;
 }
-input{
+.checkbox-buttons input{
     position: relative;
     height: 0;
     width: 0;
@@ -146,7 +146,7 @@ input{
 
 }
 
-input::before{
+.checkbox-buttons input::before{
     position:absolute;
     content: "";
     width: var(--size-button);
@@ -161,11 +161,11 @@ input::before{
     transition: .2s;
 }
 
-input:checked::before{
+.checkbox-buttons input:checked::before{
     background-color: #ffffff;
 }
 
-input:hover::after{
+.checkbox-buttons input:hover::after{
     position:absolute;
     content: "";
     width: var(--size-button);
@@ -209,4 +209,5 @@ input:hover::after{
     gap: 10px;
     padding: 10px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px
+    border-radius: 8px;
+}
