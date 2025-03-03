@@ -72,10 +72,22 @@ async function setup() {
     device.node.connect(outputNode);
 
     // (Optional) Extract the name and rnbo version of the patcher from the description
-    document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "Unnamed Patcher") + " (v" + patcher.desc.meta.rnboversion + ")";
+    document.getElementById("patcher-title").innerText = (patcher.desc.meta.filename || "Cargando. Por favor espera.") ;
+
 
     // (Optional) Automatically create sliders for the device parameters
+    
     makeSliders(device);
+    
+    // Creación de las checkboxes para playsmpa/stopsmpa en su propio div
+    makeCheckboxes(device,"a");
+    makeCheckboxes(device, "b");
+    makeCheckboxes(device, "c");
+    makeCheckboxes(device, "d");
+    makeCheckboxes(device, "e");
+    makeCheckboxes(device, "f");
+    makeCheckboxes(device, "g");
+    makeCheckboxes(device, "h");
 
     // (Optional) Create a form to send messages to RNBO inputs
     makeInportForm(device);
@@ -118,96 +130,105 @@ function makeSliders(device) {
     let pdiv = document.getElementById("rnbo-parameter-sliders");
     let noParamLabel = document.getElementById("no-param-label");
     if (noParamLabel && device.numParameters > 0) pdiv.removeChild(noParamLabel);
-
+    
+   
     // This will allow us to ignore parameter update events while dragging the slider.
     let isDraggingSlider = false;
     let uiElements = {};
 
-    device.parameters.forEach(param => {
-        // Subpatchers also have params. If we want to expose top-level
-        // params only, the best way to determine if a parameter is top level
-        // or not is to exclude parameters with a '/' in them.
-        // You can uncomment the following line if you don't want to include subpatcher params
-        
-        //if (param.id.includes("/")) return;
+   // Solo mostrar sliders para FX_1, FX_2, FX_3 y FX_4
+const targetParams = ["FX_1_Clean", "FX_2_Space", "FX_3_Dirt", "FX_4_Glitch"];
 
-        // Create a label, an input slider and a value display
+device.parameters.forEach(param => {
+    if (!targetParams.includes(param.name)) return; // Ignorar otros parámetros
+
+    // Crear elementos para el slider
+    let slider = document.createElement("input");
+    let sliderContainer = document.createElement("div");
+    let label = document.createElement("label");
+    let text = document.createElement("span");
+
+    slider.type = "range";
+    slider.min = param.min;
+    slider.max = param.max;
+    slider.step = (param.max - param.min) / 100;
+    slider.value = param.value;
+
+    label.textContent = `${param.name}: `;
+    label.setAttribute("for", param.name);
+    label.setAttribute("class", "param-label");
+
+    text.textContent = param.value.toFixed(2);
+
+    slider.addEventListener("input", (event) => {
+        const newValue = parseFloat(event.target.value);
+        param.value = newValue;
+        text.textContent = newValue.toFixed(2);
+    });
+
+    // Agregar los elementos al contenedor
+    sliderContainer.appendChild(label);
+    sliderContainer.appendChild(slider);
+    sliderContainer.appendChild(text);
+
+    document.getElementById("rnbo-parameter-sliders").appendChild(sliderContainer);
+});
+}
+function makeCheckboxes(device, column) {
+    let elementId = "rnbo-parameter-checkboxes-"+column
+    let playsmp = "playsmp" + column;
+    let stopsmp = "stopsmp" + column;
+    let cdiv = document.getElementById(elementId);
+    let noParamLabel = document.getElementById("no-checkboxes-label");
+    if (noParamLabel && device.numParameters > 0) cdiv.removeChild(noParamLabel);
+
+    let currentSample = null;
+
+    // Asumiendo que tienes los parámetros "playsmpa" y "stopsmpa"
+    let playsmpa = device.parameters.find(param => param.name === playsmp);
+    let stopsmpa = device.parameters.find(param => param.name === stopsmp);
+    // Crear 8 checkboxes
+    for (let i = 0; i < 8; i++) {
+  
+        // Crear un label y una checkbox
         let label = document.createElement("label");
-        let slider = document.createElement("input");
-        let text = document.createElement("input");
-        let sliderContainer = document.createElement("div");
-        sliderContainer.appendChild(label);
-        sliderContainer.appendChild(slider);
-        sliderContainer.appendChild(text);
+        let checkbox = document.createElement("input");
+        let checkboxContainer = document.createElement("div");
+        checkboxContainer.appendChild(label);
+        checkboxContainer.appendChild(checkbox);
 
-        // Add a name for the label
-        label.setAttribute("name", param.name);
-        label.setAttribute("for", param.name);
-        label.setAttribute("class", "param-label");
-        label.textContent = `${param.name}: `;
+        // Configurar el label
+        label.setAttribute("for", `checkbox${i}`);
+        label.textContent = ``;
 
-        // Make each slider reflect its parameter
-        slider.setAttribute("type", "range");
-        slider.setAttribute("class", "param-slider");
-        slider.setAttribute("id", param.id);
-        slider.setAttribute("name", param.name);
-        slider.setAttribute("min", param.min);
-        slider.setAttribute("max", param.max);
-        if (param.steps > 1) {
-            slider.setAttribute("step", (param.max - param.min) / (param.steps - 1));
-        } else {
-            slider.setAttribute("step", (param.max - param.min) / 1000.0);
-        }
-        slider.setAttribute("value", param.value);
+        // Configurar la checkbox
+        checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("id", `checkbox${i}`);
+        checkbox.setAttribute("name", `checkbox${i}`);
 
-        // Make a settable text input display for the value
-        text.setAttribute("value", param.value.toFixed(1));
-        text.setAttribute("type", "text");
+        // Acción al hacer clic en una checkbox
+        checkbox.addEventListener("change", () => {
+            if (checkbox.checked) {
+                // Desactivar el sample actual (si hay uno activo)
+                if (currentSample) currentSample.checked = false;
+                stopsmpa.value = 0;
+                // Asignar el valor correspondiente (0-7) al parámetro "playsmpa"
+                playsmpa.value = -1.0
+                playsmpa.value = i;  // El valor corresponde al índice de la checkbox
+                currentSample = checkbox;
 
-        // Make each slider control its parameter
-        slider.addEventListener("pointerdown", () => {
-            isDraggingSlider = true;
-        });
-        slider.addEventListener("pointerup", () => {
-            isDraggingSlider = false;
-            slider.value = param.value;
-            text.value = param.value.toFixed(1);
-        });
-        slider.addEventListener("input", () => {
-            let value = Number.parseFloat(slider.value);
-            param.value = value;
-        });
-
-        // Make the text box input control the parameter value as well
-        text.addEventListener("keydown", (ev) => {
-            if (ev.key === "Enter") {
-                let newValue = Number.parseFloat(text.value);
-                if (isNaN(newValue)) {
-                    text.value = param.value;
-                } else {
-                    newValue = Math.min(newValue, param.max);
-                    newValue = Math.max(newValue, param.min);
-                    text.value = newValue;
-                    param.value = newValue;
-                }
+            } else {
+                // Si se desmarca, enviar el valor 1 al "stopsmpa"
+                stopsmpa.value = 1;
+                currentSample = null;
             }
         });
 
-        // Store the slider and text by name so we can access them later
-        uiElements[param.id] = { slider, text };
-
-        // Add the slider element
-        pdiv.appendChild(sliderContainer);
-    });
-
-    // Listen to parameter changes from the device
-    device.parameterChangeEvent.subscribe(param => {
-        if (!isDraggingSlider)
-            uiElements[param.id].slider.value = param.value;
-        uiElements[param.id].text.value = param.value.toFixed(1);
-    });
-}
-
+        // Añadir la checkbox al contenedor
+        cdiv.appendChild(checkboxContainer);
+    }
+}   
+    
 function makeInportForm(device) {
     const idiv = document.getElementById("rnbo-inports");
     const inportSelect = document.getElementById("inport-select");
@@ -336,4 +357,15 @@ function makeMIDIKeyboard(device) {
     });
 }
 
+
+
+/* Hide welcome screen */
+function hideWelcome() {
+    var div = document.getElementById("WelcomeScreen");
+    div.classList.add("hide");
+}
+
+
+
 setup();
+
