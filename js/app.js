@@ -156,8 +156,8 @@ device.parameters.forEach(param => {
     slider.step = (param.max - param.min) / 100;
     slider.value = param.value;
 
-    label.textContent = `${param.name}: `;
-    label.setAttribute("for", param.name);
+    label.textContent = `${param.displayName}: `;
+    label.setAttribute("for", param.displayName);
     label.setAttribute("class", "param-label");
 
     text.textContent = param.value.toFixed(2);

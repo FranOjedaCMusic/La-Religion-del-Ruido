@@ -226,7 +226,9 @@ h2, em {
 }
 /* #####fondo efecto ######*/
 #rnbo-parameter-sliders > div {
-    background-color: red;
+    width: 100px;
+    border-radius: 25px;
+    box-shadow: 3px 3px 10px #000000 ;
     margin: 1em;
     padding: 1em;
 }
