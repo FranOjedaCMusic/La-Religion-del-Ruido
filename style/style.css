@@ -90,7 +90,8 @@ h2, em {
 
 #rnbo-parameter-sliders > div > input:first-of-type {
 
-
+    writing-mode: vertical-lr;
+    direction: rtl;
     flex-grow: 1;
 }
 #rnbo-parameter-checkboxes{
