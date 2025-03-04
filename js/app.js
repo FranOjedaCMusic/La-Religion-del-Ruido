@@ -1,3 +1,5 @@
+var effectsPanelVisivility = false;
+
 async function setup() {
     const patchExportURL = "export/patch.export.json";
 
@@ -368,4 +370,22 @@ function hideWelcome() {
 
 
 setup();
+
+
+
+function effectsPanel(){
+    var panel = document.getElementById("rnbo-parameter-sliders");
+    if (effectsPanelVisivility) {
+        effectsPanelVisivility = false;
+        panel.classList.remove("up");
+        panel.classList.add("down");
+    }
+    else{
+        effectsPanelVisivility = true;
+        panel.classList.remove("down");
+        panel.classList.add("up");
+        
+    
+    }
+}
 

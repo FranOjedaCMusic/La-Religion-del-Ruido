@@ -78,22 +78,6 @@ h2, em {
     color: #dddddd;
 }
 
-#rnbo-parameter-sliders {
-    display: flex;
-    flex-direction: column;
-    display: none;
-}
-
-#rnbo-parameter-sliders > div {
-    display: flex;
-}
-
-#rnbo-parameter-sliders > div > input:first-of-type {
-
-    writing-mode: vertical-lr;
-    direction: rtl;
-    flex-grow: 1;
-}
 #rnbo-parameter-checkboxes{
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -125,14 +109,14 @@ h2, em {
     flex-direction: row;
     padding: min(2vw,2vh);
     box-shadow: 10px 15px 25px 10px  #00000083;
-
+    
     border-radius: var(--border-r   ad);
     
 }
 .checkbox-buttons{
     display: flex;
     flex-direction: column;
-   
+    
 }
 .checkbox-buttons h2{
     display: none;
@@ -144,7 +128,7 @@ h2, em {
     margin: calc(var(--size-button)/2 + 5px);
     -moz-appearance: initial;
     
-
+    
 }
 
 .checkbox-buttons input::before{
@@ -200,15 +184,150 @@ h2, em {
     padding: 10px 15px;  
     border-radius: 25px;
     background-color: #a8a8a8;
-
+    
     color: #ffffff;
     border: 0;
 } 
+/* 
 #rnbo-parameter-sliders {
-    display: flex !important; /* Hace que el contenedor sea visible */
-    flex-direction: column;
     gap: 10px;
-    padding: 10px;
+    padding: 100px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
 }
+
+#rnbo-parameter-sliders > div {
+    display: flex;
+}
+
+     */
+
+
+     /* Contenedor Efectos */
+#rnbo-parameter-sliders{
+    padding-top: 30px;
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    margin-top: 40px;
+    background-color: #222222;
+   
+}
+#rnbo-parameter-sliders > button{
+    
+    position: relative;
+
+    bottom: 20px;
+    left: 50%;
+
+    height: 20px;
+
+
+}
+/* #####fondo efecto ######*/
+#rnbo-parameter-sliders > div {
+    background-color: red;
+    margin: 1em;
+    padding: 1em;
+}
+
+/* 
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+  }
+ */
+/* SLIDERS STYLE ##################################################### */
+
+#rnbo-parameter-sliders > div > input:first-of-type {
+    
+    writing-mode: vertical-lr;
+    direction: rtl;
+
+
+    z-index: 1000;
+  -webkit-appearance: none;
+  
+  width: 25px;
+  background: #000000;
+  outline: none;
+  opacity: 1;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+    
+}
+
+/* indicator */
+#rnbo-parameter-sliders > div > input:first-of-type::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 85px;
+    height: 25px;
+    background: linear-gradient(0deg, black, #888888, #666666);
+    cursor: pointer;
+  }
+  
+#rnbo-parameter-sliders > div > input:first-of-type::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+/* ###################################################################################### */
+#rnbo-parameter-sliders > h2{
+    position: absolute;
+    bottom: 220px !important;
+    left: 0;
+
+}
+
+.down {
+    padding-top: 0 !important;
+    height: 0 ;
+    
+}
+
+.down > div{
+    padding-top: 0;
+    display: none;
+}
+
+.up {
+    padding-top: 30px;
+    height: 250px ;
+
+}
+
+.up > div{
+    display: flex;
+}
+.up > button{
+    
+    bottom: 50px !important;
+} 
+.down > button{
+    
+    bottom: 0px !important;
+} 
+
+.up > h2{
+    display: block;
+    
+} 
+.down > h2{
+    
+    display: none;
+} 
+
