@@ -81,7 +81,7 @@ h2, em {
 #rnbo-parameter-sliders {
     display: flex;
     flex-direction: column;
-    /* display: none; */
+    display: none;
 }
 
 #rnbo-parameter-sliders > div {
@@ -196,10 +196,18 @@ h2, em {
     display: none;
 }
 .welcomeScreen button{
-    padding: 10px 15px;
+    padding: 10px 15px;  
     border-radius: 25px;
     background-color: #a8a8a8;
 
     color: #ffffff;
     border: 0;
 } 
+#rnbo-parameter-sliders {
+    display: flex !important; /* Hace que el contenedor sea visible */
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
