@@ -276,20 +276,45 @@ margin: auto;
 }
 
 /* indicator */
-#rnbo-parameter-sliders > div > input:first-of-type::-webkit-slider-thumb {
+/* Estilos base para el slider */
+#rnbo-parameter-sliders > div > input:first-of-type {
     -webkit-appearance: none;
     appearance: none;
-    width: 4em;
-    height: 25px;
+    margin: auto;
+    width: 15px;
+    height: 80px;
+    background: #000;
+    outline: none;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+/* Estilos para el thumb */
+#rnbo-parameter-sliders > div > input:first-of-type::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 3em;
+    height: 10px;
     background: linear-gradient(0deg, black, #888888, #666666);
     cursor: pointer;
-  }
-  
-#rnbo-parameter-sliders > div > input:first-of-type::-moz-range-thumb {
-    width: 4em;
-    height: 25px;
-    background:linear-gradient(0deg, black, #888888, #666666);
-    cursor: pointer;
+}
+
+/* Estilos para la pista (track) opcionalmente */
+#rnbo-parameter-sliders > div > input:first-of-type::-webkit-slider-runnable-track {
+    height: 80px;
+    background: #000;
+}
+
+/* Ajustes específicos para dispositivos iOS/Safari */
+@media screen and (max-device-width: 768px) {
+    #rnbo-parameter-sliders > div > input:first-of-type {
+       transform: rotate(-90deg);
+       /* Ajusta las dimensiones al estar rotado:
+          La "nueva" anchura será la altura original y viceversa */
+       width: 80px;  
+       height: 15px;
+       margin: 0;
+    }
 }
 
 /* ###################################################################################### */
