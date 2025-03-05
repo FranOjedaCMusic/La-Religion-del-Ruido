@@ -1,2 +1,2 @@
-# Prueba de dispositivo LRDR
-En esta prueba solamente estamos probando la reproducción de los samples a través de checkboxes, solo se puede reproducir 1 sample en simultáneo de cada pista (columna). No estamos usando FX, el audio va directo a la salida.
+# La Religión del Ruido
+La Religión del Ruido es un dispositivo virtual no situado, que puede asumir el formato de sitio web interactivo con posibilidad de instalación en sitio específico. Una matriz de 8 pistas de audio con 8 muestras de audio cada una (64 samples en total) que el usuario puede activar para crear una experiencia sonora de hasta ocho sonidos simultáneos. Los sonidos se procesan a través de cuatro canales auxiliares antes de llegar al canal maestro, donde los diferentes efectos y tratamientos transforman las muestras, brindando nuevas perspectivas y reinterpretaciones del material sonoro.
