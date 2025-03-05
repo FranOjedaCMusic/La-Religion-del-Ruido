@@ -266,6 +266,7 @@ h2, em {
   -webkit-appearance: none;
 margin: auto;
   width: 15px;
+  height: 80px !important;
   background: #000000;
   outline: none;
   opacity: 1;
@@ -311,8 +312,6 @@ margin: auto;
     height: fit-content;
 
     min-height: 80px;
-    max-width: 110%;
-
 }
 
 .up > div{
@@ -329,15 +328,7 @@ margin: auto;
     bottom: 0px !important;
 } 
 
-.up > h2{
-    display: block;
-    
-} 
-.down > h2{
-    
-    display: none;
-} 
-
 .up input{
-    height: 8vh !important;
+    height: 80px !important;
 }
+
