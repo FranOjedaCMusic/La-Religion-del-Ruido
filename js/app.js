@@ -169,9 +169,8 @@ device.parameters.forEach(param => {
     });
 
     // Agregar los elementos al contenedor
-    sliderContainer.appendChild(label);
     sliderContainer.appendChild(slider);
-    sliderContainer.appendChild(text);
+    sliderContainer.appendChild(label);
 
     document.getElementById("rnbo-parameter-sliders").appendChild(sliderContainer);
 });
