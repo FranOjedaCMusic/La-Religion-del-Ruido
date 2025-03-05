@@ -294,7 +294,9 @@ function loadPresets(device, patcher) {
     if (presets.length < 1) {
         document.getElementById("rnbo-presets").removeChild(document.getElementById("preset-select"));
         return;
+        
     }
+
 
     document.getElementById("rnbo-presets").removeChild(document.getElementById("no-presets-label"));
     let presetSelect = document.getElementById("preset-select");
@@ -306,6 +308,7 @@ function loadPresets(device, patcher) {
     });
     presetSelect.onchange = () => device.setPreset(presets[presetSelect.value].preset);
 }
+
 
 function makeMIDIKeyboard(device) {
     let mdiv = document.getElementById("rnbo-clickable-keyboard");
