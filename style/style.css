@@ -46,7 +46,7 @@ h2, em {
     margin: auto;
     display: flex;
     flex-direction: column;
-    height: 98vh;
+    height: 100vh;
 }
 #rnbo-inports {
     display: none;
@@ -211,7 +211,7 @@ h2, em {
     max-width:100vw;
 
     padding-top: 30px;
-    position: sticky;
+    
     bottom: 0;
     display: flex;
     background-color: #222222;
@@ -309,9 +309,9 @@ margin: auto;
 
 .up {
     max-width:100vw;
-    padding-top: 30px;
-    height: 20vh ;
-    min-height: 80px;
+    padding-top: 1em;
+    height: 10em ;
+    min-height: 220px !important;
     max-width: 110%;
 
 }
