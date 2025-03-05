@@ -12,11 +12,12 @@
 <body>
     <div id="WelcomeScreen" class="welcomeScreen">
         <h1>La religión del ruido</h1>
-        <p>Trabajo final de grado</p>
-        <p>Se sugiere utilizar Chrome o Mozilla</p>
-        <p>Además, te pido que esperes a que carguen los audios. Puede tarder un tiempito &#128512; </p>
+        <h2>por Francisco Ojeda</h2>
+        <h3>Trabajo final de grado</h3>
+        <p>La página puede tardar hasta dos minutos en cargar debido a la cantidad de muestras de audio. Por favor espera! &#128512; </p>
+        <p> Si no logras cargar la página, prueba de nuevo</p>
         <button onclick="hideWelcome()">
-            Entrar
+            Entrar a La Religión del Ruido
         </button>
     </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -50,46 +51,41 @@
                     <em id="rnbo-console-description">Check the developer console for more messages from the RNBO device</em>
                 </div>
             </div>
-            <div id="rnbo-presets">
-                <h2>Presets</h2>
-                <em id="no-presets-label">No presets defined</em>
-                <select id="preset-select"></select>
-            </div >
-        </div>
+         
 
         <div class="containerButtons">
 
             <div id="rnbo-parameter-checkboxes-a" class="checkbox-buttons">
                 <h2></h2>
-                <em id="no-checkboxes-label">Cargando </em>
+                <em id="no-checkboxes-label"> </em>
             </div>
             <div id="rnbo-parameter-checkboxes-b" class="checkbox-buttons">
                 <h2></h2>
-                <em id="no-checkboxes-label">muestras.</em>
+                <em id="no-checkboxes-label"></em>
             </div>
             <div id="rnbo-parameter-checkboxes-c" class="checkbox-buttons">
                 <h2></h2>
-                <em id="no-checkboxes-label">Si </em>
+                <em id="no-checkboxes-label"> </em>
             </div>
             <div id="rnbo-parameter-checkboxes-d" class="checkbox-buttons">
                 <h2></h2>
-                <em id="no-checkboxes-label">no </em>
+                <em id="no-checkboxes-label">Cargando </em>
             </div>
             <div id="rnbo-parameter-checkboxes-e" class="checkbox-buttons">
                 <h2></h2>
-                <em id="no-checkboxes-label">carga, </em>
+                <em id="no-checkboxes-label">, </em>
             </div>
             <div id="rnbo-parameter-checkboxes-f" class="checkbox-buttons">
                 <h2></h2>
-                <em id="no-checkboxes-label">prueba </em>
+                <em id="no-checkboxes-label"> </em>
             </div>
             <div id="rnbo-parameter-checkboxes-g" class="checkbox-buttons">
                 <h2></h2>
-                <em id="no-checkboxes-label">recargar </em>
+                <em id="no-checkboxes-label"> </em>
             </div>
             <div id="rnbo-parameter-checkboxes-h" class="checkbox-buttons">
                 <h2></h2>
-                <em id="no-checkboxes-label">la web.</em>
+                <em id="no-checkboxes-label">.</em>
             </div>
             
         </div>
@@ -103,6 +99,14 @@
                 
             </div>
         </div>
+        <!-- Presets-->
+        <div id="rnbo-presets">
+            <h2>Presets</h2>
+            <em id="no-presets-label">Cargando Presets</em>
+            <select id="preset-select"></select>
+        </div >
+    
+    </div>
 
     </div>
 

@@ -3,8 +3,6 @@
     --border-rad:min(2vw,2vh);
 }
 
-
-
 html, body {
     margin: 0;
     padding: 0;
@@ -46,7 +44,7 @@ h2, em {
     margin: auto;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 10vh;
 }
 #rnbo-inports {
     display: none;
@@ -55,10 +53,7 @@ h2, em {
     display: none;
 }
 
-#rnbo-presets {
-    display: none;
 
-}
 #rnbo-clickable-keyboard {
     display: flex;
     flex-wrap: wrap;
@@ -191,27 +186,16 @@ h2, em {
     color: #ffffff;
     border: 0;
 } 
-/* 
-#rnbo-parameter-sliders {
-    gap: 10px;
-    padding: 100px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-}
-
-#rnbo-parameter-sliders > div {
+/* Contenedor Presets */
+#rnbo-presets {
     display: flex;
+    align-items: center;
 }
-
-     */
-
-
-     /* Contenedor Efectos */
+/* Contenedor Efectos */
 #rnbo-parameter-sliders{
     max-width:100vw;
-
-    padding-top: 30px;
-    
+    padding-top: 0;
+    padding-bottom: 0;
     bottom: 0;
     display: flex;
     background-color: #222222;
@@ -220,10 +204,8 @@ h2, em {
 .effects-panel-button{
     
  border-radius: 15px 15px 0 0;
- border: 0;
+ border: 1;
  background-color: #b3abba;
- 
- 
 
 }
 /* #####fondo efecto ######*/
@@ -235,33 +217,15 @@ h2, em {
     border-radius: 25px;
     box-shadow: 3px 3px 10px #000000 ;
     margin: auto;
-    padding: 1em;
+    padding: 0.8em; /* valor reducido */
 }
 
-/* 
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #04AA6D;
-    cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #04AA6D;
-    cursor: pointer;
-  }
- */
+
 /* Estilos base para el slider */
 #rnbo-parameter-sliders > div > input:first-of-type {
     
     writing-mode: vertical-lr;
     direction: rtl;
-
-
     z-index: 1000;
   -webkit-appearance: none;
   margin: auto;
@@ -275,7 +239,7 @@ h2, em {
     
 }
 
-/* indicator */
+/* Este es el Thumb */
 #rnbo-parameter-sliders > div > input:first-of-type::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -319,12 +283,7 @@ h2, em {
 .up > div{
     display: flex;
 }
-/* 
-.up > button{
-    
-    bottom:  !important;
-}  
-*/
+
 .down > button{
     
     bottom: 0px !important;
