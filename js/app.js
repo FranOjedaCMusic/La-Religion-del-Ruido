@@ -155,6 +155,7 @@ device.parameters.forEach(param => {
     slider.max = param.max;
     slider.step = (param.max - param.min) / 100;
     slider.value = param.value;
+    slider.id = param.displayName;
 
     label.textContent = `${param.displayName}: `;
     label.setAttribute("for", param.displayName);
@@ -391,3 +392,26 @@ function effectsPanel(){
     }
 }
 
+function presetHandler(values) {
+    let clean = values[0];
+    let space = values[1];
+    let drive = values[2];
+    let glitch = values[3];
+
+    const cleanSlider = document.getElementById("Clean");
+    const spaceSlider = document.getElementById("Space");
+    const driveSlider = document.getElementById("Drive");
+    const glitchSlider = document.getElementById("Glitch");
+
+    cleanSlider.value = clean;
+    spaceSlider.value = space;
+    driveSlider.value = drive;
+    glitchSlider.value = glitch;
+
+    // Manually trigger the input event for each slider to fire the event handlers
+    cleanSlider.dispatchEvent(new Event('input'));
+    spaceSlider.dispatchEvent(new Event('input'));
+    driveSlider.dispatchEvent(new Event('input'));
+    glitchSlider.dispatchEvent(new Event('input'));
+
+}
